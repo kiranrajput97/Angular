@@ -1,0 +1,13 @@
+npm 
+
+node -v 
+npm -v 
+cli v
+
+
+ng new Angular6Project -d 
+ng new Angular6Project --skip-tests
+cd Angular6Project 
+ng server --open 
+ng s -o
+npm install bootstrap@4 jquery --sav
