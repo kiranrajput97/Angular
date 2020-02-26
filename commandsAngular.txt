@@ -1,13 +1,21 @@
-npm 
+npm install -g npm@latest
+npm instal -g @angular/cli
+npm install -g tpescript
+
+ng v  //angular cli
 
 node -v 
 npm -v 
 cli v
 
 
-ng new Angular6Project -d 
+ng new Angular9Project -d 		// d  is used for dryrun 
 ng new Angular6Project --skip-tests
 cd Angular6Project 
-ng server --open 
+ng serve --open 			// below cmd is also same and abbrevated version of this 
 ng s -o
-npm install bootstrap@4 jquery --sav
+npm install bootstrap@4 jquery --save
+
+
+ng g c hospital/list-Appointment  --flat=true
+ng generate module app-ruting --flat=true --module=app
