@@ -11,6 +11,7 @@ import { SearchComponent } from './search/search.component';
 import { PipeBirthdayComponent } from './pipe-birthday/pipe-birthday.component';
 import { CustompipeComponent } from './custompipe/custompipe.component';
 import { HeroesComponent } from './heroes/heroes.component';
+import { HeroFormComponent } from './hero/hero-form/hero-form.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HeroesComponent } from './heroes/heroes.component';
     SearchComponent,
     PipeBirthdayComponent,
     CustompipeComponent,
-    HeroesComponent
+    HeroesComponent,
+    HeroFormComponent
     
    ],
   imports: [
