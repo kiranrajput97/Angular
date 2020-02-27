@@ -10,6 +10,8 @@ import { DirectiveComponent } from './directive/directive.component';
 import { SearchComponent } from './search/search.component';
 import { PipeBirthdayComponent } from './pipe-birthday/pipe-birthday.component';
 import { CustompipeComponent } from './custompipe/custompipe.component';
+import { HeroesComponent } from './heroes/heroes.component';
+import { MockHeroesComponent } from './heroes/mock-heroes.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { CustompipeComponent } from './custompipe/custompipe.component';
     DirectiveComponent,
     SearchComponent,
     PipeBirthdayComponent,
-    CustompipeComponent
+    CustompipeComponent,
+    HeroesComponent,
+    MockHeroesComponent
    ],
   imports: [
     BrowserModule,
