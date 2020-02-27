@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { HeroService } from './heroes/hero.service';
+import { Hero } from './hero';
 
 
 
@@ -10,7 +12,15 @@ import { Component } from '@angular/core';
 
 
 export class AppComponent {
+  
   title = 'Angular9Project';
+
+
+  msg: string;
+  constructor(hero:HeroService)
+  {
+    this.msg=hero.getmsg();
+  }
 
   
  imageSrc = '';
@@ -18,7 +28,7 @@ export class AppComponent {
  imageButtons = [ {src:'/assets/image/1.jpg', name: 'image-1'}, 
  {src:'/assets/image/3.JPG', name: 'image-2'}, 
  {src:'/assets/image/2.JPG', name: 'image-3'}]
- 
+ /*
  constructor() { }
  ngOnInit() { }
  onClick(imageNameObject) 
@@ -27,7 +37,7 @@ export class AppComponent {
    this.messageText = imageNameObject.name;
  }
 
-
+*/
 animal={
   name:'image',
   image:'/assets/image/n.jpg'
@@ -45,3 +55,4 @@ onPressEnter($event){
 }
 
 }
+
