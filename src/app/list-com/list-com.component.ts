@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { EmployeeServiceService } from '../employee-service.service';
+import { element } from 'protractor';
 
 export class Emp{
   ID:number;
@@ -47,21 +49,34 @@ export class ListComComponent implements OnInit {
       }
     
     
-  constructor( private httpClient:HttpClient) { 
-  
+  constructor(private employeeService:EmployeeServiceService) { 
+    
+    
   }
   
 
   ngOnInit(): void {
-  
-    this.httpClient.get("assets/employee.json").subscribe((data:Emp[])=>{
+   
+    /*this.httpClient.get("assets/employee.json").subscribe((data:Emp[])=>{
     data.forEach(element => {
       this.empList.push(element);
     });
      console.log(data);
-    })
+    })*/
+    this.employeeService.getData();
+      this.empList=this.employeeService.getEmpList();
+      this.empList.forEach(element => {
+        console.log(element.name);
+      })
+      
   
   }
+
+  ngOnDestroy() {
+    //this.employeeService.setEmpList(this.empList);
+    this.empList.slice();
+      }
+
       val1:Boolean=false;
       index1:number;
       emp1:Emp;
@@ -99,5 +114,14 @@ export class ListComComponent implements OnInit {
     console.log(col);
     this.column=col;
   }
+  SearchID:number;
+  SearchName:String;
+  SearchSalary:number;
+  SearchDepartment:String;
+  searchElement:any;
+  search(element:any){
+
+    this.searchElement=element;
+}
 
 }

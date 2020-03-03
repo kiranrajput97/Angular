@@ -1,28 +1,22 @@
 
      [
         {
-        "ID":"001",
+        "ID":"1",
         "Salary":"10000",
         "name":"kiran",
-       "Department":"cse"
+       "Department":"IT"
         },
         {
-            "ID":"002",
+            "ID":"2",
             "Salary":"20000",
-            "name":"kr",
+            "name":"rajput",
            "Department":"ece"
             },
             {
-              "ID":"003",
-              "Salary":"30000",
-              "name":"sj",
-             "Department":"ece"
-              },
-            {
-                "ID":"004",
-                "Salary":"40000",
-                "name":"rajput",
-               "Department":"mec"
+                "ID":"3",
+                "Salary":"30000",
+                "name":"kr",
+               "Department":"CS"
              }
     ]
   
