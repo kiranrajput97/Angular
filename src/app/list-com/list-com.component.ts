@@ -31,6 +31,7 @@ export class ListComComponent implements OnInit {
     emp.ID=this.ID;
     emp.Salary=this.Salary;
     emp.Department=this.Department;
+
     this.empList.push(emp);
     this.name ="";
     this.ID = 0;
@@ -119,6 +120,7 @@ export class ListComComponent implements OnInit {
   SearchSalary:number;
   SearchDepartment:String;
   searchElement:any;
+  
   search(element:any){
 
     this.searchElement=element;
