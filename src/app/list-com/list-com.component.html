@@ -1,0 +1,37 @@
+<p>list data component !</p>
+<pre>
+    ID         :<input [(ngModel)]="ID"/>    
+    Name       :<input [(ngModel)]="name"/>
+    Salary     :<input [(ngModel)]="Salary"/>
+    Department :<input [(ngModel)]="Department"/>
+    </pre>
+    <button (click)="onclickAddDetails()" class="btn btn-success">Add Details</button>
+    <button (click)="showDetails()" class="btn btn-success">Show details</button>
+  
+    
+    <table *ngIf="val" align="center" border="1">    
+        <tr> 
+          <th (click)='change("ID")'>ID</th>    
+          <th (click)='change("name")' >Name</th>    
+          <th (click)='change("Salary")'>Salary</th>    
+          <th (click)='change("Department")'>Department</th> 
+          <th colspan="2">Action</th>    
+              
+        </tr>    
+        <tr *ngFor="let emp of empList | orderBy:column">  
+          <td >{{emp.ID}}</td> 
+          <td >{{emp.name}}</td>       
+          <td >{{emp.Salary}}</td> 
+          <td>{{emp.Department}}</td> 
+          <td><button (click)="onclickUpdateDetails(emp)" class="btn btn-success">Update Details</button></td>
+          <td><button (click)="onclickDeleteDetails(emp)" class="btn btn-success">Delete Details</button></td>  
+        </tr>    
+      </table>
+      <pre *ngIf="val1">
+        ID         :<input [(ngModel)]="ID"/>
+        Name       :<input [(ngModel)]="name"/>
+        Salary     :<input [(ngModel)]="Salary"/>
+        Department :<input [(ngModel)]="Department"/>
+       <button (click)="onclickUpdate()" class="btn btn-success">Update Details</button>
+        </pre>
+    

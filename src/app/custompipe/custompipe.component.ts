@@ -1,14 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Pipe, PipeTransform, OnInit } from '@angular/core';
 
-@Component({
-  selector: 'app-custompipe',
-  templateUrl: './custompipe.component.html',
-  styleUrls: ['./custompipe.component.css']
+@Pipe({
+    name: 'fileSize'
 })
+
 export class CustompipeComponent implements OnInit {
 
-  constructor() { }
+  private units = ['bytes', 'KB', 'MB', 'GB', 'TB', 'PB'];
 
+  transform(bytes: number = 0, precision: number = 2): string 
+  {
+      // tslint:disable-next-line:curly
+      if (isNaN(parseFloat(String(bytes))) || !isFinite(bytes)) return '?';
+      let unit = 0;
+      while (bytes >= 1024) 
+      {
+          bytes /= 1024;
+          unit++;
+      }
+      return bytes.toFixed(+precision) + ' ' + this.units[unit];
+  }
+  constructor() { }
   ngOnInit(): void {
   }
 

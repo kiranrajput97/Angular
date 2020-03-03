@@ -1,9 +1,14 @@
 import { Injectable } from '@angular/core';
+import { HEROES } from './mock-heroes';
 
 @Injectable({
-  providedIn: 'root'
+ providedIn: 'platform' 
 })
-export class HeroService {
-  getmsg() {return "lpu";}
-  constructor() { }
+export class HeroService 
+{
+  /*static getHeroes(): import("./hero").Hero[] 
+  {
+    return HEROES;  
+  }*/
+ getHeroes() { return "LPU"; }
 }

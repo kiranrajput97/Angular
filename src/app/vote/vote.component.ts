@@ -1,14 +1,16 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-vote',
-  template: `
-    <h4>{{name}}</h4>
-    <button (click)="vote(true)"  [disabled]="didVote">Agree</button>
-    <button (click)="vote(false)" [disabled]="didVote">Disagree</button>
-  `
+  template:`
+  <h4>{{name}}</h4>
+  <button (click)="vote(true)"  [disabled]="didVote">Agree</button>
+  <button (click)="vote(false)" [disabled]="didVote">Disagree</button>
+  `,
+  styleUrls: ['./vote.component.css']
 })
-export class VoteComponent {
+export class VoteComponent implements OnInit 
+{
   @Input()  name: string;
   @Output() voted = new EventEmitter<boolean>();
   didVote = false;
@@ -17,4 +19,9 @@ export class VoteComponent {
     this.voted.emit(agreed);
     this.didVote = true;
   }
+ 
+  
+  constructor() { }
+  ngOnInit(): void { }
+
 }

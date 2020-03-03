@@ -1,0 +1,90 @@
+<p>
+    Directive works!
+  </p>
+  <!-- ngIf-->
+  <div *ngIf="false">1</div> <!-- never displayed -->
+  <div *ngIf="a > b">2</div> <!-- displayed if a is more than b -->
+  <div *ngIf="str == 'yes'">3</div> <!-- displayed if str is the string "yes"-->
+  <div *ngIf="myFunc()">4</div> <!-- displayed if myFunc returns truthy -->
+  
+  <!-- ngSwitch-->
+  <div class="container" [ngSwitch]="myVar">
+    <div *ngSwitchCase="'A'">Var is A</div>
+    <div *ngSwitchCase="'B'">Var is B</div>
+    <div *ngSwitchCase="'C'">Var is C</div>
+    <div *ngSwitchDefault>Var is something else</div>
+    </div>
+  <!-- ngSwitch-->
+    <h4>
+      Current choice is {{ choice }}
+      <button class="ui primary button" (click)="nextChoice()">next</button>
+      </h4>
+      <div>
+        <ul [ngSwitch]="choice">
+          <li *ngSwitchCase="1">First choice</li>
+          <li *ngSwitchCase="2">Second choice</li> 
+          <li *ngSwitchCase="3">Third choice</li>
+          <li *ngSwitchCase="4">Fourth choice</li>
+          <li *ngSwitchCase="2">Second choice, again</li>
+          <li *ngSwitchDefault>Default choice</li>
+        </ul>
+      </div>
+    <!-- ngSwitch-->
+      <div>
+        <input type="text" name="color" value="{{color}}" #colorinput>
+        </div>
+        <div>
+        <input type="text" name="fontSize" value="{{fontSize}}" #fontinput>
+        </div>
+        <button (click)="apply(colorinput.value, fontinput.value)">
+        Apply settings
+        </button>
+        <div>
+        <span [ngStyle]="{color: 'red'}" [style.font-size.px]="fontSize">
+        red text
+        </span>
+        </div>
+    <!-- ngClass-->
+        <div [ngClass]="{bordered: false}">This is never bordered</div>
+        <div [ngClass]="{bordered: true}">This is always bordered</div>
+  
+        <!-- ngFor-->  
+        <h4>
+          Simple list of strings
+          </h4>
+          <div *ngFor="let c of cities">
+          {{ c }}
+          </div>
+      <!-- ngFor to dislay objects-->  
+          <h4>
+            List of objects
+            </h4>
+            <table>
+            <thead>
+            <tr>
+            <th>Name </th>
+            <th>Age </th>
+            <th>City </th>
+            </tr>
+            </thead>
+            <tr *ngFor="let p of people">
+            
+            <td>{{ p.name }}</td>
+            <td>{{ p.age }}</td>
+            <td>{{ p.city }}</td>
+            </tr>
+            </table>
+  
+                <!-- ngFor to use index-->  
+            <div class="uilist" *ngFor="let c of cities; let num = index">
+              <div class="item">{{ num+1 }} - {{ c }}</div>
+              </div>
+  <!-- ngNonBindableDemo--> 
+              <div class='ngNonBindableDemo'>
+                <span class="bordered">{{ content }}</span>
+                <span class="pre" ngNonBindable>
+                &larr; This is what {{ content }} rendered
+                </span>
+                </div>
+  <!-- Host Listener to listen to Host Events--> 
+                <div class="card card-block" ccCardHover>...</div>
