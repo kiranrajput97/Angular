@@ -1,16 +1,13 @@
  <!-- routing (app-routing.module.ts) check-->
- 
- <nav class="navbar navbar-bright bg-dark">
+ <div align="center"><h2>Welcome to Book Management</h2>
+ </div><nav class="navbar navbar-bright bg-dark">
  <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">My Website </a>
     </div>
-    <ul class="nav navbar-nav">
-      <li> <a routerLinkActive="active" routerLink="HomePage">HomePage</a></li>
-      <li><a routerLinkActive="active" routerLink="ListData">ListData</a></li>
-      <li><a routerLinkActive="active" routerLink="AddData">AddData</a></li>
+    <a Onclick="showDetails()" routerLinkActive="active" routerLink="ListData">Display all books</a>
+       <a routerLinkActive="active" routerLink="ListData">add books</a>
       
-    </ul>
+    
   </div>
 </nav>
 <router-outlet></router-outlet>

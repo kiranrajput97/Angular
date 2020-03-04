@@ -9,10 +9,10 @@ import { EmployeeServiceService } from '../employee-service.service';
 })
 export class AddDataComponent implements OnInit {
 
-  ID:number;
-  Salary:number;
-  name:String;
-  Department:String;
+  BOOKID:number;
+  BOOKCOST:number;
+  BOOKNAME:String;
+  AUTHOR:String;
   empList: Array<Emp> = [];
   constructor(private employeeService:EmployeeServiceService) { }
 
@@ -25,17 +25,17 @@ export class AddDataComponent implements OnInit {
     
       }
   onclickAddDetails(){
-    console.log(this.name,this.ID,this.Salary,this.Department);
+    console.log(this.BOOKNAME,this.BOOKID,this.BOOKCOST,this.AUTHOR);
     let emp=new Emp();
-    emp.name=this.name;
-    emp.ID=this.ID;
-    emp.Salary=this.Salary;
-    emp.Department=this.Department;
+    emp.BOOKNAME=this.BOOKNAME;
+    emp.BOOKID=this.BOOKID;
+    emp.BOOKCOST=this.BOOKCOST;
+    emp.AUTHOR=this.AUTHOR;
     this.empList.push(emp);
     this.employeeService.setEmpList(emp);
-    this.name ="";
-    this.ID = 0;
-    this.Department="";
-    this.Salary=0;
+    this.BOOKNAME ="";
+    this.BOOKID = 0;
+    this.AUTHOR="";
+    this.BOOKCOST=0;
     }
 }

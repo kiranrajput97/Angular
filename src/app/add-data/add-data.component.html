@@ -1,8 +1,9 @@
+
 <p>add-data works!</p>
 <pre>
-    ID         :<input [(ngModel)]="ID"        required pattern="[0-9]{1,10}" title="ID should only contain digit . e.g. 1525" />    
-    Name       :<input [(ngModel)]="name"       required pattern="[A-Z][a-z]{4,15}" title="name should only contain upper and lower case letters . e.g. Satyam"/>
-    Salary     :<input [(ngModel)]="Salary"     required pattern="[0-9]{3,7}" title="salary should only contain digit . e.g. 15000"/>
-    Department :<input [(ngModel)]="Department" required  pattern="[A-Z][a-z]{3,15}" title="Department should only contain upper and lower case letters . e.g. Satyam"/>
+    BOOKID         :<input [(ngModel)]="BOOKID"        required pattern="[0-9]{1,10}" title="ID should only contain digit . e.g. 1525" />    
+    BOOKNAME       :<input [(ngModel)]="BOOKNAME"       required pattern="[A-Z][a-z]{4,15}" title="name should only contain upper and lower case letters . e.g. Satyam"/>
+    BOOKCOST       :<input [(ngModel)]="BOOKCOST"     required pattern="[0-9]{3,7}" title="salary should only contain digit . e.g. 15000"/>
+    AUTHOR         :<input [(ngModel)]="AUTHOR"     required  pattern="[A-Z][a-z]{3,15}" title="Department should only contain upper and lower case letters . e.g. Satyam"/>
     </pre>
     <button (click)="onclickAddDetails()" class="btn btn-success">Add Details</button>

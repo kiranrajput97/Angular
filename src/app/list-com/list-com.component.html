@@ -1,48 +1,42 @@
-<p>list data component !</p>
 
+<!--
 <pre>
-    ID         :<input [(ngModel)]="ID"        required pattern="[0-9]{1,10}" title="ID should only contain digit . e.g. 1525" />    
-    Name       :<input [(ngModel)]="name"       required pattern="[A-Z][a-z]{4,15}" title="name should only contain upper and lower case letters . e.g. kiran"/>
-    Salary     :<input [(ngModel)]="Salary"     required pattern="[0-9]{3,7}" title="salary should only contain digit . e.g. 50000"/>
-    Department :<input [(ngModel)]="Department" required  pattern="[A-Z][a-z]{3,15}" title="Department should only contain upper and lower case letters . e.g. kiran"/>
-    </pre>
-    <button (click)="onclickAddDetails()" class="btn btn-primary">Add Details</button>
+    BOOKID         :<input [(ngModel)]="BOOKID"        required pattern="[1-9]{1,10}" title="BOOKID should only contain digit . e.g. 1525" />    
+    BOOKNAME       :<input [(ngModel)]="BOOKNAME"       required pattern="[A-Z][a-z]{4,15}" title="BOOKNAME should only contain upper and lower case letters . e.g. kiran"/>
+    BOOKCOST       :<input [(ngModel)]="BOOKCOST"     required pattern="[0-9]{3,7}" title="BOOKCOST should only contain digit . e.g. 50000"/>
+    AUTHOR         :<input [(ngModel)]="AUTHOR" required  pattern="[A-Z][a-z]{3,15}" title="AUTHOR should only contain upper and lower case letters . e.g. kiran"/>
+    </pre>-->
+    <!--<button (click)="onclickAddDetails()" class="btn btn-primary">Add Details</button> &nbsp;-->
     <button (click)="showDetails()" class="btn btn-primary">Show details</button>
   
     
-    <table *ngIf="val" align="center" border="1">   
+    <table *ngIf="val" align="center" border="5"  >   
     <thead>
         <tr> 
-          <th (click)='change("ID")'>ID</th>    
-          <th (click)='change("name")' >Name</th>    
-          <th (click)='change("Salary")'>Salary</th>    
-          <th (click)='change("Department")'>Department</th> 
+          <th (click)='change("BOOKID")'>BOOKID</th>    
+          <th (click)='change("BOOKNAME")' >BOOKNAME</th>    
+          <th (click)='change("BOOKCOST")'>BOOKCOST</th>    
+          <th (click)='change("AUTHOR")'>AUTHOR</th> 
           <th colspan="2">Action</th>       
         </tr>  
       </thead>  
       <tbody>
-        <tr> 
-          <th >ID:<input [(ngModel)]="SearchID"  ></th>    
-          <th  >Name:<input [(ngModel)]="SearchName"  ></th>    
-          <th >Salary:<input [(ngModel)]="SearchSalary"  ></th>    
-          <th >Department:<input [(ngModel)]="SearchDepartment"  ></th> 
-          <th colspan="2"></th>    
-        </tr>
-        <tr *ngFor="let emp of empList | orderBy:column | searchFilter:SearchID:'ID' | searchFilter:SearchName:'name' | searchFilter:SearchSalary:'Salary' | searchFilter:SearchDepartment:'Department'">  
-          <td >{{emp.ID}}</td> 
-          <td >{{emp.name}}</td>       
-          <td >{{emp.Salary}}</td> 
-          <td>{{emp.Department}}</td> 
-          <td><button (click)="onclickUpdateDetails(emp)" class="btn btn-primary">Update Details</button></td>
-          <td><button (click)="onclickDeleteDetails(emp)" class="btn btn-primary">Delete Details</button></td>  
+        
+        <tr *ngFor="let emp of empList | orderBy:column ">  
+          <td >{{emp.BOOKID}}</td> 
+          <td >{{emp.BOOKNAME}}</td>       
+          <td >{{emp.BOOKCOST}}</td> 
+          <td>{{emp.AUTHOR}}</td> 
+          <td><button (click)="onclickDeleteDetails(emp)" class="btn btn-primary">Delete</button></td>  
+          <td><button (click)="onclickUpdateDetails(emp)" class="btn btn-primary">Edit</button></td>
         </tr>   
       </tbody> 
       </table>
       <pre *ngIf="val1">
-        ID         :<input [(ngModel)]="ID"/>
-        Name       :<input [(ngModel)]="name"/>
-        Salary     :<input [(ngModel)]="Salary"/>
-        Department :<input [(ngModel)]="Department"/>
+        BOOKID         :<input [(ngModel)]="BOOKID"/>
+        BOOKNAME       :<input [(ngModel)]="BOOKNAME"/>
+        BOOKCOST       :<input [(ngModel)]="BOOKCOST"/>
+        AUTHOR          :<input [(ngModel)]="AUTHOR"/>
        <button (click)="onclickUpdate()" class="btn btn-success">Update Details</button>
         </pre>
     

@@ -7,7 +7,7 @@ import { ListComComponent } from './list-com/list-com.component';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { SortByPipe } from './sort-by.pipe';
-import { SearchFilterPipe } from './search-filter.pipe';
+//import { SearchFilterPipe } from './search-filter.pipe';
 import { AddDataComponent } from './add-data/add-data.component';
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import { AddDataComponent } from './add-data/add-data.component';
     HomeComComponent,
     ListComComponent,
     SortByPipe,
-    SearchFilterPipe,
+    //SearchFilterPipe,
     AddDataComponent
   ],
   imports: [

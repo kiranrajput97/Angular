@@ -17,7 +17,7 @@ const routes: Routes =[
     path:'AddData', component:AddDataComponent 
   },
   {
-    path:'',redirectTo:'/HomePage',pathMatch:'full'
+    path:'*',redirectTo:'/ListData',pathMatch:'full'
   }
 ];
 

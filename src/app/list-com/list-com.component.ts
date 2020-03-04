@@ -4,10 +4,10 @@ import { EmployeeServiceService } from '../employee-service.service';
 import { element } from 'protractor';
 
 export class Emp{
-  ID:number;
-  Salary:number;
-  name:String;
-  Department:String;
+  BOOKID :number;
+  BOOKNAME:String;
+  BOOKCOST:number;
+  AUTHOR:String;
   
 }
 @Component({
@@ -17,26 +17,26 @@ export class Emp{
 })
 export class ListComComponent implements OnInit {
 
-  ID:number;
-  Salary:number;
-  name:String;
-  Department:String;
+  BOOKID :number;
+  BOOKNAME:string;
+  BOOKCOST:number;
+  AUTHOR:String;
   empList: Array<Emp> = [];
   
  
   onclickAddDetails(){
-    console.log(this.name,this.ID,this.Salary,this.Department);
+    console.log(this.BOOKNAME,this.BOOKID,this.BOOKCOST,this.AUTHOR);
     let emp=new Emp();
-    emp.name=this.name;
-    emp.ID=this.ID;
-    emp.Salary=this.Salary;
-    emp.Department=this.Department;
+    emp.BOOKNAME=this.BOOKNAME;
+    emp.BOOKID=this.BOOKID;
+    emp.BOOKCOST=this.BOOKCOST;
+    emp.AUTHOR=this.AUTHOR;
 
     this.empList.push(emp);
-    this.name ="";
-    this.ID = 0;
-    this.Department="";
-    this.Salary=0;
+    this.BOOKNAME ="";
+    this.BOOKID = 0;
+    this.AUTHOR="";
+    this.BOOKCOST=0;
     }
  
       val:Boolean=false;
@@ -44,7 +44,7 @@ export class ListComComponent implements OnInit {
       {
         this.val=!this.val;
         this.empList.forEach(element => {
-         console.log(element.ID+" "+element.name+" "+element.Salary+" "+element.Department);
+         console.log(element.BOOKID+" "+element.BOOKNAME+" "+element.BOOKCOST+" "+element.AUTHOR);
       });
 
       }
@@ -67,7 +67,7 @@ export class ListComComponent implements OnInit {
     this.employeeService.getData();
       this.empList=this.employeeService.getEmpList();
       this.empList.forEach(element => {
-        console.log(element.name);
+        console.log(element.BOOKNAME);
       })
       
   
@@ -85,10 +85,10 @@ export class ListComComponent implements OnInit {
     this.emp1=emp;
     this.val1=true;
     let index:number=this.empList.indexOf(emp);
-    this.ID=emp.ID;
-    this.name=emp.name;
-    this.Salary=emp.Salary;
-    this.Department=emp.Department;
+    this.BOOKID=emp.BOOKID;
+    //this.BOOKNAME=emp.BOOKNAME;
+    this.BOOKCOST=emp.BOOKCOST;
+    this.AUTHOR=emp.AUTHOR;
     
   }
   
@@ -102,9 +102,9 @@ export class ListComComponent implements OnInit {
   onclickUpdate()
   {
     this.val1=false;
-    this.emp1.name=this.name;
-    this.emp1.Salary=this.Salary;
-    this.emp1.Department=this.Department;
+    this.emp1.BOOKNAME=this.BOOKNAME;
+    this.emp1.BOOKCOST=this.BOOKCOST;
+    this.emp1.AUTHOR=this.AUTHOR;
     
     
   }
@@ -115,15 +115,6 @@ export class ListComComponent implements OnInit {
     console.log(col);
     this.column=col;
   }
-  SearchID:number;
-  SearchName:String;
-  SearchSalary:number;
-  SearchDepartment:String;
-  searchElement:any;
-  
-  search(element:any){
-
-    this.searchElement=element;
-}
+ 
 
 }
