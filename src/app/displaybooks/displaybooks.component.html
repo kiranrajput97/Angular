@@ -1,0 +1,64 @@
+<div class="container-fluid">
+    <div class="data">
+        <table>
+          <thead>
+            <tr>
+            <th>Book ID</th>
+            <th>Book Name</th>
+            <th>Book Cost</th>
+            <th>Author</th>
+            <th>Delete Book</th>
+            <th>Edit Book</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor = "let book of bookList">  
+              <td>{{book.id}}</td> 
+              <td>{{book.name}}</td>
+              <td>{{book.cost}}</td>
+              <td>{{book.author}}</td>
+              <td><button (click) = "delete(book)" class="btn btn-primary  btn-block">Delete</button></td> 
+              <td><button (click) = "update(book)" class="btn btn-success  btn-block">Edit</button></td>
+            </tr>
+          </tbody>
+        </table> 
+      </div> 
+
+      <div class="updatedata" *ngIf = "displayBlock">
+        <form >
+          <fieldset class="form-group">
+            <legend style="text-align: center;">Update Book</legend>
+            <div class="form-group">
+              <label for="id">1. Enter Book Id : </label>
+              <input type [(ngModel)] = "updateInput.id" name="bookID" class="form-control" id="id" readonly>
+            </div>
+  
+            <div class="form-group">
+              <label for="name">2. Enter Book Name : </label>
+              <input #anything="ngModel" type [(ngModel)] = "updateInput.name" name="bookName" class="form-control" id="name" required>
+              <div *ngIf="anything.invalid && anything.touched" class="alert alert-secondary">
+                <span *ngIf="anything.errors.required">Name is mandatory</span>
+              </div>
+            </div>
+  
+            <div class="form-group">
+              <label for="cost">3. Enter Book Cost : </label>
+              <input type [(ngModel)] = "updateInput.cost" name="bookCost" class="form-control" id="cost" #anything1="ngModel" pattern="[0-9]*" required>
+              <div *ngIf="anything1.invalid && anything.touched" class="alert alert-secondary">
+                <span *ngIf="anything1.errors.required">Cost is mandatory</span>
+                <span *ngIf="anything1.errors.pattern">Cost can only be Number</span>
+              </div>
+            </div>
+  
+            <div class="form-group">
+              <label for="author">4. Enter Author Name : </label>
+              <input type [(ngModel)] = "updateInput.author" name="bookAuthor" class="form-control" id="author" #anything2="ngModel" required>
+              <div *ngIf="anything2.invalid && anything.touched" class="alert alert-secondary">
+                <span *ngIf="anything2.errors.required">Author is mandatory</span>
+              </div>
+            </div>
+            <button (click) = "updateBook(copyObject)" class="btn btn-secondary btm-sm btn-block">Update Book</button>
+          </fieldset>
+        </form>
+      </div>
+</div>

@@ -5,9 +5,9 @@ import { element } from 'protractor';
 
 export class Emp{
   BOOKID :number;
-  BOOKNAME:String;
+  BOOKNAME:string;
   BOOKCOST:number;
-  AUTHOR:String;
+  AUTHOR:string;
   
 }
 @Component({
@@ -20,7 +20,10 @@ export class ListComComponent implements OnInit {
   BOOKID :number;
   BOOKNAME:string;
   BOOKCOST:number;
-  AUTHOR:String;
+  AUTHOR:string;
+ 
+  val:Boolean=true;
+  
   empList: Array<Emp> = [];
   
  
@@ -38,22 +41,12 @@ export class ListComComponent implements OnInit {
     this.AUTHOR="";
     this.BOOKCOST=0;
     }
- 
-      val:Boolean=false;
-      showDetails()
-      {
-        this.val=!this.val;
-        this.empList.forEach(element => {
-         console.log(element.BOOKID+" "+element.BOOKNAME+" "+element.BOOKCOST+" "+element.AUTHOR);
-      });
+     
 
-      }
     
     
-  constructor(private employeeService:EmployeeServiceService) { 
     
-    
-  }
+  constructor(private employeeService:EmployeeServiceService) {  }
   
 
   ngOnInit(): void {
@@ -86,7 +79,7 @@ export class ListComComponent implements OnInit {
     this.val1=true;
     let index:number=this.empList.indexOf(emp);
     this.BOOKID=emp.BOOKID;
-    //this.BOOKNAME=emp.BOOKNAME;
+    this.BOOKNAME=emp.BOOKNAME;
     this.BOOKCOST=emp.BOOKCOST;
     this.AUTHOR=emp.AUTHOR;
     

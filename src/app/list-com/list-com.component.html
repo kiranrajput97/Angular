@@ -1,14 +1,3 @@
-
-<!--
-<pre>
-    BOOKID         :<input [(ngModel)]="BOOKID"        required pattern="[1-9]{1,10}" title="BOOKID should only contain digit . e.g. 1525" />    
-    BOOKNAME       :<input [(ngModel)]="BOOKNAME"       required pattern="[A-Z][a-z]{4,15}" title="BOOKNAME should only contain upper and lower case letters . e.g. kiran"/>
-    BOOKCOST       :<input [(ngModel)]="BOOKCOST"     required pattern="[0-9]{3,7}" title="BOOKCOST should only contain digit . e.g. 50000"/>
-    AUTHOR         :<input [(ngModel)]="AUTHOR" required  pattern="[A-Z][a-z]{3,15}" title="AUTHOR should only contain upper and lower case letters . e.g. kiran"/>
-    </pre>-->
-    <!--<button (click)="onclickAddDetails()" class="btn btn-primary">Add Details</button> &nbsp;-->
-    <button (click)="showDetails()" class="btn btn-primary">Show details</button>
-  
     
     <table *ngIf="val" align="center" border="5"  >   
     <thead>
@@ -17,7 +6,9 @@
           <th (click)='change("BOOKNAME")' >BOOKNAME</th>    
           <th (click)='change("BOOKCOST")'>BOOKCOST</th>    
           <th (click)='change("AUTHOR")'>AUTHOR</th> 
-          <th colspan="2">Action</th>       
+          <th (click)='change("delete")'>Delete Book</th> 
+          <th (click)='change("edit")'>Edit Book</th> 
+         <!-- <th colspan="2">Action</th>-->       
         </tr>  
       </thead>  
       <tbody>
@@ -33,10 +24,10 @@
       </tbody> 
       </table>
       <pre *ngIf="val1">
-        BOOKID         :<input [(ngModel)]="BOOKID"/>
-        BOOKNAME       :<input [(ngModel)]="BOOKNAME"/>
-        BOOKCOST       :<input [(ngModel)]="BOOKCOST"/>
-        AUTHOR          :<input [(ngModel)]="AUTHOR"/>
+        BOOKID         :<input [(ngModel)]="BOOKID"    required pattern="[1-9]{1,10}" title="BOOKID should only contain digit . e.g. 1525"/>   
+        BOOKNAME       :<input [(ngModel)]="BOOKNAME"   required pattern="[A-Z][a-z]{4,15}" title="BOOKNAME should only contain upper and lower case letters . e.g. c programming"/>
+        BOOKCOST       :<input [(ngModel)]="BOOKCOST"   required pattern="[0-9]{3,7}" title="BOOKCOST should only contain digit . e.g. 50000"/>
+        AUTHOR          :<input [(ngModel)]="AUTHOR"  required  pattern="[A-Z][a-z]{3,15}" title="AUTHOR should only contain upper and lower case letters . e.g. charles"/>
        <button (click)="onclickUpdate()" class="btn btn-success">Update Details</button>
         </pre>
     

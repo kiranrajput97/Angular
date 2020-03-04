@@ -1,0 +1,26 @@
+<table class="offset-lg-1 col-lg-9" border="5">
+    <thead style="text-align: center">
+        <tr>
+            <th>BOOK ID</th>
+            <th>BOOK NAME</th>
+            <th>BOOK COST</th>
+            <th>AUTHOR</th>
+            <th>DELETE BOOK</th>
+            <th>EDIT BOOK</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let obj of userService.getAllBooks(); let i=index">
+            <td>{{obj.id}}</td>
+            <td>{{obj.name}}</td>
+            <td>{{obj.cost}}</td>
+            <td>{{obj.author}}</td>
+            <td>
+                <button (click)="removeBook(i)">Delete Book</button>
+            </td>
+            <td>
+                <button class="btn" (click)="update(i)">Edit Book</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
